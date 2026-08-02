@@ -1,0 +1,52 @@
+stages:
+  - build
+  - deploy
+
+
+variables:
+  NODE_VERSION: "22"
+
+
+cache:
+  paths:
+    - node_modules/
+
+
+build:
+  stage: build
+
+  image: node:${NODE_VERSION}
+
+  script:
+    - npm ci
+    - npm run build
+
+  artifacts:
+    paths:
+      - dist
+
+    expire_in: 1 week
+
+
+
+pages:
+
+  stage: deploy
+
+  image: alpine:latest
+
+  dependencies:
+    - build
+
+  script:
+
+    - mkdir public
+    - cp -r dist/* public/
+
+  artifacts:
+
+    paths:
+      - public
+
+  only:
+    - main
