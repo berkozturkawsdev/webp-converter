@@ -156,9 +156,7 @@ export default function LandingPage() {
 
 
                 <h1>
-                    Convert Images to
-                    <span> WebP </span>
-                    Instantly
+                    The Fastest Way to Convert JPG and PNG Images to WebP
                 </h1>
 
 
