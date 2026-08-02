@@ -6,6 +6,7 @@ import "./styles/buttons.css";
 import "./LandingPage.css";
 import convertToWebP from "./services/webpConverter";
 import JSZip from "jszip";
+import { trackEvent } from "./analytics";
 
 
 export default function LandingPage() {
@@ -30,6 +31,12 @@ export default function LandingPage() {
         );
 
         setOriginalSize(size);
+
+        trackEvent(
+            "images_selected",
+            "converter",
+            `${selectedFiles.length} files`
+        );
     };
 
 
@@ -48,6 +55,11 @@ export default function LandingPage() {
     const handleConvert = async () => {
 
         setIsConverting(true);
+
+        trackEvent(
+            "conversion_started",
+            "converter"
+        );
 
         const results: File[] = [];
 
@@ -88,6 +100,11 @@ export default function LandingPage() {
     const downloadZip = async () => {
 
         const zip = new JSZip();
+
+        trackEvent(
+            "zip_downloaded",
+            "converter"
+        );
 
 
         convertedFiles.forEach(file => {
