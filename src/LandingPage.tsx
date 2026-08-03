@@ -7,6 +7,8 @@ import "./LandingPage.css";
 import convertToWebP from "./services/webpConverter";
 import JSZip from "jszip";
 import { trackEvent } from "./analytics";
+import WebPInfo from "./WebPInfo";
+import Footer from "./Footer";
 
 
 export default function LandingPage() {
@@ -295,8 +297,7 @@ export default function LandingPage() {
 
 
             <FeatureCards />
-
-
+            <WebPInfo />
         </div>
 
     );
