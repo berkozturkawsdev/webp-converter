@@ -41,17 +41,21 @@ html {
 
 body {
 
-    font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
 
     color: var(--text);
 
     background:
         radial-gradient(circle at top, #eef4ff 0%, #ffffff 65%);
 
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Segoe UI Black", "Segoe UI", sans-serif;
+    font-weight: 900;
 }
 
 main {
