@@ -70,7 +70,7 @@ export default function UploadBox({
       <input
         ref={fileInputRef}
         type="file"
-        accept="image/png,image/jpeg,image/webp"
+        accept="image/*"
         multiple
         hidden
         onChange={(e) => handleFiles(e.target.files)}
@@ -89,7 +89,7 @@ export default function UploadBox({
 
 
       <small>
-        PNG, JPG, WebP up to 20MB
+        All image formats up to 20MB
       </small>
 
     </div>
