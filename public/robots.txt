@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webpify.bozapps.com/sitemap.xml
